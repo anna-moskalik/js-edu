@@ -12,3 +12,12 @@ module.exports = function getTimeForEducation(
       return 0;
   };
   
+  module.exports = function getTimeForEducation(
+    focus,
+    knowsProgramming,
+    config
+    ) {
+      let hours = 0;
+      knowsProgramming ? (hours = 800) : (hours = 800 + 500);
+      return Math.ceil (hours/config[focus]);
+  }
